@@ -1,0 +1,22 @@
+.img-login-div{
+    top: 80px;
+    left: 400px;
+    right: 400px;
+    width: 600px;
+    height: 650px;
+    background-color: #ffffff;
+    color: black;
+    border-radius: 20px;
+    box-shadow: 0 -4px 5px rgba(0, 0, 0, 0.25);
+    text-align: start;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.img-login-div h1{
+    text-align: center;
+}
+
+.button{
+    margin-left: 230px;
+}

@@ -1,0 +1,39 @@
+.img-caption{
+  color: #fff;
+  text-shadow: 0 4px 5px rgba(0, 0, 0, 0.25);
+  font-size: 56px;
+  top: 170px;
+  left: 70px;
+  text-align: start;
+  font-weight: 500;
+  font-family: 'Poppins';
+}
+
+.img-text{
+  color: #fff;
+  text-shadow: 0 4px 5px rgba(0, 0, 0, 0.25);
+  font-size: 32px;
+  top: 370px;
+  left: 70px;
+  text-align: start;
+  font-weight: 400;
+  font-family: Poppins;
+}
+
+.img-btn{
+  top: 470px;
+  left: 70px;
+  text-align: start;
+}
+
+.btn-login{
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 14px;
+}
+
+.btn-signup{
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 14px;
+}

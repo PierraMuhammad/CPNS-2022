@@ -1,0 +1,21 @@
+.box{
+    background-color: white;
+    color: black;
+    bottom: 50px;
+    /* top: 100px; */
+    left: 130px;
+    width: 1200px;
+    height: 550px;
+    border-radius: 20px;
+}
+
+.con-img{
+    text-align: left;
+}
+
+.box-img{
+    width: 240px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 20px;
+}

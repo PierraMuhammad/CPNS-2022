@@ -37,3 +37,18 @@
   padding-bottom: 6px;
   font-size: 14px;
 }
+
+.container{
+  position: relative;
+  width: 1500px;
+  height: 89.25vh;
+}
+
+.container img#jumbotron{
+  position: absolute;
+  left: 0;
+  width: 1536px; 
+  height: 100%; 
+  object-fit: cover;
+  justify-self: flex-start;
+}

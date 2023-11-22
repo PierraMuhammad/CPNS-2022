@@ -1,7 +1,7 @@
 .img-login-div{
+    position: absolute;
     top: 20%;
-    left: 450px;
-    right: 550px;
+    left: 500px;
     width: 500px;
     height: 400px;
     background-color: #ffffff;
@@ -20,4 +20,23 @@
 
 .button{
     margin-left: 170px;
+}
+
+#jumbotron{
+    margin: 0;
+}
+
+.container{
+    position: relative;
+    width: 1500px;
+    height: 89.6vh;
+  }
+
+.container img{
+    position: absolute;
+    left: 0;
+    width: 1536px; 
+    height: 100%; 
+    object-fit: cover;
+    justify-self: flex-start;
 }

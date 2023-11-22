@@ -78,12 +78,19 @@ else{
 
     <!-- Jumbotron -->
     <div class="container ms-0 ps-0">
-      <img src="../img/Jumbotron1.png" alt="" style="width: 1396px; height: 605px; object-fit: cover;">
-      <div class="container carousel-caption box d-flex">
-        <div class="col-3 con-img">
-          <h3>Halo <?php print_r($result["Nama_Lengkap"])?></h3>
+      <img src="../img/Jumbotron1.png" alt="" id="jumbotron">
+      <div class="carousel-caption box d-flex">
+        <div class="iden-info">
+          <h3>Halo<?php print_r($result["Nama_Lengkap"])?></h3>
           <img src="../img/<?php echo $result["PasFoto"]?>" class="box-img" alt="">
-          <button class="mt-4 btn btn-primary"><a class="text-light text-decoration-none" href="#">Cetak Kerta Ujian</a></button>
+          <?php
+            if($result["Status"] == "Sudah Verifikasi"){
+              echo'<button class="btn btn-primary margin-cetak"><a class="text-light text-decoration-none" href="./cetakPDF.php" target="_blank">Cetak Kerta Ujian</a></button>';
+            }
+            else{
+              echo'<button class="btn btn-primary margin-cetak" disabled><a class="text-light text-decoration-none" href="#">Cetak Kerta Ujian</a></button>';
+            }
+          ?>
         </div>
         <div class="mt-5 text-start">
           <tr>
@@ -140,14 +147,20 @@ else{
           <br>
           <td>
             <button class="btn btn-primary"><a class="text-light text-decoration-none" href="../img/<?php echo$result["PasFoto"]?>" download=PasFoto.jpg>PasFoto</a></button>
-            <button class="btn btn-primary"><a class="text-light text-decoration-none" href="../img/<?php echo$result["FotoKTP"]?>" download=FotoKTP.jpg>FotoKTP</a></button>
-            <button class="btn btn-primary"><a class="text-light text-decoration-none" href="../img/<?php echo$result["Berkas"]?>" download=Berkas.PDF>PasFoto</a></button>
+            <button class="btn btn-primary"><a class="text-light text-decoration-none" href="../img/<?php echo$result["PasKTP"]?>" download=FotoKTP.jpg>FotoKTP</a></button>
           </td>
           <br>
           <br>
           <td>
             <button class="btn btn-primary"><a class="text-light text-decoration-none" href="./edit-profil.php">Ubah</a></button>
-            <button class="btn btn-success"><a class="text-light text-decoration-none" href="./konfirmasi.php">Konfirmasi</a></button>
+            <?php
+            if($result['Status'] == "belum konfirmasi"){
+              echo'<button class="btn btn-success"><a class="text-light text-decoration-none" href="./konfirmasi.php">Konfirmasi</a></button>';
+            }
+            else{
+              echo'<button class="btn btn-success" disabled><a class="text-light text-decoration-none" href="./konfirmasi.php">Konfirmasi</a></button>';
+            }
+            ?>
             <button class="btn btn-danger"><a class="text-light text-decoration-none" href="./hapus.php">Hapus</a></button>
           </td>
           <br>

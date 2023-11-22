@@ -27,7 +27,7 @@ $result = AllVerification();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/jumbotron.css">
-    <link rel="stylesheet" href="../style/reguler.css">
+    <link rel="stylesheet" href="../style/reguler.css?v=<?php echo time(); ?>">
   </head>
   <body>
     <!-- Navbar-regular Awal -->
@@ -60,7 +60,8 @@ $result = AllVerification();
     <!-- Navbar-regular Akhir -->
 
     <!-- Jumbotron -->
-    <div class="container ms-0 ps-0 body-part">
+    <div class="container full-div">
+      <h1>Semua Verifikasi</h1>
       <table cellpadding="10">
         <tr>
             <th>No.</th>
@@ -82,11 +83,11 @@ $result = AllVerification();
                 <td><?php echo $row["JK"]?></td>
                 <td><?php echo $row["TmptLahir"].', '.$row["TglLahir"]?></td>
                 <td><a href="../img/<?php echo $row["PasFoto"]?>" download=PasFoto.jpg>PasFoto</a></td>
-                <td><a href="../img/<?php echo $row["FotoKTP"]?>" download=FotoKTP.jpg>Foto KTP</a></td>
-                <td><a href="../img/<?php echo $row["Berkas"]?>" download=Berkas.jpg>Berkas</a></td>
+                <td><a href="../img/<?php echo $row["PasKTP"]?>" download=FotoKTP.jpg>Foto KTP</a></td>
+                <td><a href="../document/<?php echo $row["FilePendukung"]?>" download=Berkas.jpg>Berkas</a></td>
                 <td><?php echo $row["Status"]?></td>
                 <td>
-                    <a href="./verifikasi.php?id=<?php echo $row['P_ID']?>">Verifikasi</a> | <a href="./reject.php?id=<?php echo $row['P_ID']?>">Tolak</a>
+                    <button class="btn btn-success"><a class="text-light text-decoration-none" href="./verifikasi.php?id=<?php echo $row['P_ID']?>">Verifikasi</a></button> | <button class="btn btn-danger"><a class="text-light text-decoration-none" href="./reject.php?id=<?php echo $row['P_ID']?>">Tolak</a></button>
                 </td>
             </tr>
         <?php endwhile;?>

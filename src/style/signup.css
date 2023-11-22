@@ -1,7 +1,7 @@
 .img-login-div{
-    top: 80px;
-    left: 400px;
-    right: 400px;
+    position: absolute;
+    top: 5px;
+    left: 450px;
     width: 600px;
     height: 650px;
     background-color: #ffffff;
@@ -19,4 +19,19 @@
 
 .button{
     margin-left: 230px;
+}
+
+.container{
+    position: relative;
+    width: 1500px;
+    height: 89.6vh;
+}
+
+.container img{
+    position: absolute;
+    left: 0;
+    width: 1536px; 
+    height: 100%; 
+    object-fit: cover;
+    justify-self: flex-start;
 }

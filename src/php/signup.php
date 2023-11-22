@@ -44,7 +44,7 @@ if(isset($_POST["register"])){
 
     <!-- Jumbotron -->
     <div class="container ms-0 ps-0">
-      <img src="../img/Jumbotron1.png" alt="" style="width: 1381px; height: 700px; object-fit: cover;">
+      <img src="../img/Jumbotron1.png" alt="">
       <div class="carousel-caption img-login-div">
         <h1 class="mt-3 mb-3">Registrasi Akun</h1>
         <form action="" method="post">
@@ -59,7 +59,7 @@ if(isset($_POST["register"])){
             <label for="repassword" class="form-label">Re-enter Password</label><br>
             <input type="password" id="repassword" class="form-control" name="repassword" placeholder="********"><br>
             <button type="submit" class="btn btn-primary button" name="register">Sign in</button>
-            <p class="mt-2 mb-5 pb-5">Apakah anda sudah memilik akun? <a href="./login.html">klik disini</a></p>
+            <p class="mt-2 mb-5 pb-5">Apakah anda sudah memilik akun? <a href="./login.php">klik disini</a></p>
         </form>
       </div>
     </div>

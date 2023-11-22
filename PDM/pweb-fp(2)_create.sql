@@ -4,24 +4,26 @@
 -- tables
 -- Table: Akun
 CREATE TABLE Akun (
-    ID integer  NOT NULL,
-    Nama_Lengkap varchar2(255)  NULL,
-    NIK varchar2(16)  NULL,
-    Email varchar2(100)  NULL,
-    Password varchar2(255)  NULL,
-    Role varchar2(20)  NULL,
+    ID integer  NOT NULL AUTO_INCREMENT,
+    Nama_Lengkap varchar(255)  NULL,
+    NIK varchar(16)  NULL,
+    Email varchar(100)  NULL,
+    Password varchar(255)  NULL,
+    Role varchar(20)  NULL,
     CONSTRAINT Akun_pk PRIMARY KEY (ID)
 ) ;
 
 -- Table: Peserta
 CREATE TABLE Peserta (
     P_ID Integer  NOT NULL,
-    JK varchar2(10)  NULL,
-    Tlp varchar2(15)  NULL,
-    TmptLahir varchar2(25)  NULL,
+    JK varchar(10)  NULL,
+    Tlp varchar(15)  NULL,
+    TmptLahir varchar(25)  NULL,
     TglLahir date  NULL,
-    K_Pendidikan varchar2(150)  NULL,
-    Status varchar2(20)  NULL,
+    K_Pendidikan varchar(150)  NULL,
+    Domisili varchar(50) NULL,
+    
+    Status varchar(20)  NULL,
     Akun_ID integer  NOT NULL,
     CONSTRAINT Peserta_pk PRIMARY KEY (P_ID)
 ) ;

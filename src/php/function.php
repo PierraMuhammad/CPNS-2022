@@ -21,6 +21,7 @@
             $query1 = "Select Nama_Lengkap, NIK from Akun as a Where a.Email = '$email'";
             $result1 = mysqli_query($db, $query1);
             $result1 = mysqli_fetch_assoc($result1);
+            // var_dump($result1); die;
 
             return $result1;
         }
@@ -33,7 +34,6 @@
         $query = "SELECT * FROM akun WHERE Email = '$email'";
         $result = mysqli_query($db, $query);
         
-
         //check result tidak ada isi atau lebih dari satu
         if(!$result){
             return false;
@@ -127,9 +127,17 @@
         $foto_ktp = uploadKTP();
         $file_pendukung = uploadberkas();
 
+        if(!(($pasfoto && $foto_ktp) && $file_pendukung)){
+            echo "<script>
+            alert('isi lebih benar dong')
+            </script>";
+            return false;
+            return false;
+        }
+
         // query ke database
-        $query = "INSERT INTO peserta VALUES ('','$JK','$telepon', '$tmpt','$date','$domisili','$pasfoto','$foto_ktp', '$file_pendukung', 'belum konfirmasi' ,'$akun_id')";
-        mysqli_query($db, $query);
+        $query = "INSERT INTO peserta VALUES ('','$JK','$telepon', '$tmpt','$date','$domisili','$pasfoto','$foto_ktp', '$file_pendukung', 'belum konfirmasi', 'null' ,'$akun_id')";
+        $result = mysqli_query($db, $query);
 
         return mysqli_affected_rows($db);
     }
@@ -264,7 +272,7 @@
         $namaFileBaru .= '.';
         $namaFileBaru .= $ekstensifile;
 
-        move_uploaded_file($tmpName, '../img/' . $namaFileBaru);
+        move_uploaded_file($tmpName, '../document/' . $namaFileBaru);
         return($namaFileBaru);
         // var_dump($ekstensifile);die;
     }
@@ -349,7 +357,7 @@
     function allVerification(){
         global $db;
 
-        $query = "SELECT P_ID, Nama_Lengkap, NIK, JK, TmptLahir, TglLahir, PasFoto, FotoKTP, Berkas, Status from Akun as a Join Peserta as p On a.ID = p.Akun_ID";
+        $query = "SELECT P_ID, Nama_Lengkap, NIK, JK, TmptLahir, TglLahir, PasFoto, PasKTP, FilePendukung, Status from Akun as a Join Peserta as p On a.ID = p.Akun_ID";
         $result = mysqli_query($db, $query);
         return $result;
     }
@@ -362,11 +370,43 @@
         return $result;
     }
 
+    function createNumberUjian($data){
+        $data = (int)$data;
+        // var_dump($data);die;
+        $string = '';
+        if($data >= 0 && $data < 10){
+            $string = 'P0000' . strval($data);
+        }
+        if($data >= 10 && $data < 100){
+            $string = 'P000' . strval($data);
+        }
+        if($data >= 100 && $data < 1000){
+            $string = 'P00' . strval($data);
+        }
+        if($data >= 1000 && $data < 10000){
+            $string = 'P00' . strval($data);
+        }
+        if($data >= 10000 && $data < 100000){
+            $string = 'P0' . strval($data);
+        }
+        if($data >= 100000 && $data < 1000000){
+            $string = 'P'.strval($data);
+        }
+        if($string == ''){
+            // var_dump($string);die;
+            return false;
+        }
+        return $string;
+    }
+
     function verification($data){
         global $db;
         // var_dump($data);
 
-        $query = "UPDATE PESERTA SET STATUS = 'Sudah Verifikasi' where P_ID = '$data'";
+        $nomorUjian = createNumberUjian($data);
+        // var_dump($nomorUjian);die;
+
+        $query = "UPDATE PESERTA SET status = 'Sudah Verifikasi', Nomor_Ujian = '$nomorUjian' where P_ID = '$data'";
         $result = mysqli_query($db, $query);
         if(!$result){
             return false;
@@ -384,5 +424,9 @@
             return false;
         }
         return true;
+    }
+
+    function cetakPDF(){
+        
     }
 ?>

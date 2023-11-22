@@ -66,7 +66,7 @@ if(isset($_POST["login"])){
 
     <!-- Jumbotron -->
     <div class="container ms-0 ps-0">
-      <img src="../img/Jumbotron1.png" alt="" style="width: 1396px; height: 606px; object-fit: cover;">
+      <img src="../img/Jumbotron1.png" alt="">
       <div class="carousel-caption img-login-div">
         <h1 class="mt-3 mb-3 text-primary">Log in Peserta</h1>
         <form action="" method="POST">

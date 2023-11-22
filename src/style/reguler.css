@@ -1,3 +1,12 @@
 table{
     border: 2px solid black;
 }
+
+.full-div{
+    margin: 0;
+    width: 100%;
+}
+
+.full-div table{
+    width: 1500px;
+}

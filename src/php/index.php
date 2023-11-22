@@ -53,7 +53,7 @@ if(isset($_SESSION["login"])){
 
     <!-- Jumbotron -->
     <div class="container ms-0 ps-0">
-      <img src="../img/Jumbotron1.png" alt="" style="width: 1396px; height: 605px; object-fit: cover;">
+      <img src="../img/Jumbotron1.png" id="jumbotron">
       <h1 class="carousel-caption img-caption">Selamat Datang di Portal<br>Pendaftaran Ujian Pegawai<br>Negeri Sipil</h1>
       <h3 class="carousel-caption img-text">Kementrian Kelautan dan Perikanan<br>Daerah Provinsi Jawa Timur</h3>
       <div class="carousel-caption img-btn"><a href="./login.php"><button type="button" class="btn btn-primary">Klik disini</button></a></div>

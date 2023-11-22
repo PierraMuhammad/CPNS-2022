@@ -1,21 +1,45 @@
 .box{
+    position: absolute;
     background-color: white;
     color: black;
     bottom: 50px;
-    /* top: 100px; */
-    left: 130px;
-    width: 1200px;
-    height: 550px;
+    top: 20px;
+    left: 280px;
+    width: 1000px;
+    height: 600px;
     border-radius: 20px;
 }
 
-.con-img{
-    text-align: left;
-}
-
-.box-img{
-    width: 240px;
-    height: 320px;
+.container .box-img{
+    position: absolute;
+    width: 150px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 8px;
+    left: 50px;
+}
+
+.container{
+    position: relative;
+    width: 1500px;
+    height: 89.25vh;
+}
+
+.container img#jumbotron{
+    position: absolute;
+    left: 0;
+    width: 1536px; 
+    height: 100%; 
+    object-fit: cover;
+    justify-self: flex-start;
+}
+
+.margin-cetak{
+    position: absolute;
+    margin-top: 230px;
+    left: 50px;
+}
+
+.iden-info{
+    margin-left: 50px;
 }

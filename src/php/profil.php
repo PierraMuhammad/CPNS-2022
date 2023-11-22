@@ -81,7 +81,7 @@ else{
       <img src="../img/Jumbotron1.png" alt="" id="jumbotron">
       <div class="carousel-caption box d-flex">
         <div class="iden-info">
-          <h3>Halo<?php print_r($result["Nama_Lengkap"])?></h3>
+          <h3>Halo <?php print_r($result["Nama_Lengkap"])?></h3>
           <img src="../img/<?php echo $result["PasFoto"]?>" class="box-img" alt="">
           <?php
             if($result["Status"] == "Sudah Verifikasi"){

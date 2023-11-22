@@ -37,9 +37,11 @@
 .margin-cetak{
     position: absolute;
     margin-top: 230px;
+    margin-right: 100px;
     left: 50px;
 }
 
 .iden-info{
     margin-left: 50px;
+    margin-right: 50px;
 }

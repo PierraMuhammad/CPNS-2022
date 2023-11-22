@@ -28,7 +28,7 @@ $html = '<!DOCTYPE html>
         <p align="center">Formasi Lulusan Terbaik</p>
     </div>
     <hr>
-    <img src="../img/'. $result["PasFoto"] .'" width="300" height="400">
+    <img src="../img/'. $result["PasFoto"] .'" width="150" height="200">
     <h2>Nomor Ujian: '.$result["Nomor_Ujian"].'</h2>
     <table>
         <tr>

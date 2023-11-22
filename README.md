@@ -12,6 +12,6 @@ fitur yang tersedia
 - login sebagai admin
 - verifikasi peserta
 
-untuk login sebagai admin:
-username: adminCPNS@email.com
+untuk login sebagai admin:<br>
+username: adminCPNS@email.com<br>
 password: 12345
